@@ -30,6 +30,8 @@ public class apples extends HttpServlet {
 
         try {
             new DataBase().demoCDU(fName,lName,email,pass,nick);
+            RequestDispatcher view = req.getRequestDispatcher("/Webapp/success.html");
+            view.forward(req, resp);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
